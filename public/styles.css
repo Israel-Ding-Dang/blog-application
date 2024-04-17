@@ -69,5 +69,6 @@
 }
 .white-ish {
     color: whitesmoke;
-    opacity: 40%;
+    opacity: 50%;
+    margin-bottom: 20px;
 }
