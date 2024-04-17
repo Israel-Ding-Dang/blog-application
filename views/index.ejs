@@ -61,7 +61,7 @@
         <form action="/submit-blog" method="post" class="myForm">
             <input id="blog-title" name="title" type="text" class="blog_title" placeholder="Enter the Title of your blog here" value="<%= typeof post !== 'undefined' ? post.title : '' %>">
             <textarea id="blog-body" name="body" id="" cols="30" rows="10" class="blog_body" placeholder="Write the content of your blog here"><%= typeof post !== 'undefined' ? post.body : '' %></textarea>
-            <input type="text" name="author" placeholder="Enter Author's name">
+            <input id="blog-author" type="text" name="author" placeholder="Enter Author's name">
             <input type="hidden" name="index" value="<%= typeof index !== 'undefined' ? index : '' %>">
             <div><input type="submit" value="Submit" class="btn btn-primary blog_submit_button"></div> 
                     
@@ -87,10 +87,11 @@
                         data-index="<%= index %>"
                         data-title="<%= post.title %>"
                         data-body="<%= post.body %>"
+                        data-author="<%= post.author %>"
                         >Edit Post</button>
                         <form action="/delete-blog" method="post" style="display: inline;">
                             <input type="hidden" name="index" value="<%= typeof index !== 'undefined' ? index : '' %>">
-                            <button type="submit" class="btn btn-danger">Delete Post</button>
+                            <button type="submit" class="btn btn-danger delete-button">Delete Post</button>
                         </form>                        
                     </div>                    
                 <%}) %>                           
@@ -138,10 +139,12 @@ document.querySelectorAll('.edit_button').forEach(button => {
         const index = button.getAttribute('data-index');
         const title = button.getAttribute('data-title');
         const body = button.getAttribute('data-body');
+        const author = button.getAttribute('data-author');
         
         document.getElementById('blog-title').value = title;
         document.getElementById('blog-body').value = body;
         document.querySelector('input[name="index"]').value = index;
+        document.getElementById('blog-author').value = author;
 
         // Assuming you have a Bootstrap modal, this will show it
         var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
