@@ -10,16 +10,16 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.post("/submit-blog", (req, res) => {
-    const { title, body } = req.body;
+    const { title, body, author } = req.body;
     let { index } = req.body;
     index = parseInt(index, 10); // Parse index as an integer
 
     if (!isNaN(index) && blogPosts[index]) { // Check if index is a number and exists in the array
         // Update existing post
-        blogPosts[index] = { title, body };
+        blogPosts[index] = { title, body, author };
     } else {
         // Add new post if index is NaN or does not exist
-        blogPosts.push({ title, body });
+        blogPosts.push({ title, body, author });
     }
     console.log("Updated blogPosts array:", blogPosts);
     res.redirect("/");

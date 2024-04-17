@@ -61,6 +61,7 @@
         <form action="/submit-blog" method="post" class="myForm">
             <input id="blog-title" name="title" type="text" class="blog_title" placeholder="Enter the Title of your blog here" value="<%= typeof post !== 'undefined' ? post.title : '' %>">
             <textarea id="blog-body" name="body" id="" cols="30" rows="10" class="blog_body" placeholder="Write the content of your blog here"><%= typeof post !== 'undefined' ? post.body : '' %></textarea>
+            <input type="text" name="author" placeholder="Enter Author's name">
             <input type="hidden" name="index" value="<%= typeof index !== 'undefined' ? index : '' %>">
             <div><input type="submit" value="Submit" class="btn btn-primary blog_submit_button"></div> 
                     
@@ -79,7 +80,9 @@
             <h1 class="blog_middle">My Blog Posts</h1>                        
                 <% myBlogs.forEach(function(post, index) { %> 
                     <div class="blog_holder">
-                        <h1 class="titles_for_blogs">Blog Title: <%= post.title %></h1>
+                        <h1 class="titles_for_blogs"><%= post.title %></h1>
+                        <p> <%= post.body %> </p>
+                        <small>By: <%= post.author %></small>
                         <button type="button" class="btn btn-warning edit_button"
                         data-index="<%= index %>"
                         data-title="<%= post.title %>"
