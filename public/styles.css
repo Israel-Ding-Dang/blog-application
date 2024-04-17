@@ -64,3 +64,10 @@
 .blog_submit_button {
     margin-top: 20px;
 }
+.white {
+    color: white;
+}
+.white-ish {
+    color: whitesmoke;
+    opacity: 40%;
+}

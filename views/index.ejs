@@ -81,8 +81,8 @@
                 <% myBlogs.forEach(function(post, index) { %> 
                     <div class="blog_holder">
                         <h1 class="titles_for_blogs"><%= post.title %></h1>
-                        <p> <%= post.body %> </p>
-                        <small>By: <%= post.author %></small>
+                        <p class="white"> <%= post.body %> </p>
+                        <small class="white-ish">By: <%= post.author %></small> <br>
                         <button type="button" class="btn btn-warning edit_button"
                         data-index="<%= index %>"
                         data-title="<%= post.title %>"
