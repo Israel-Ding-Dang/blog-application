@@ -1,4 +1,5 @@
 import express from "express";
+import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 const port = 3000;
@@ -11,28 +12,40 @@ app.use(express.urlencoded({extended: true}));
 
 app.post("/submit-blog", (req, res) => {
     const { title, body, author } = req.body;
-    let { index } = req.body;
-    index = parseInt(index, 10); // Parse index as an integer
+    const postId = uuidv4(); // Generate unique postId
 
-    if (!isNaN(index) && blogPosts[index]) { // Check if index is a number and exists in the array
-        // Update existing post
-        blogPosts[index] = { title, body, author };
-    } else {
-        // Add new post if index is NaN or does not exist
-        blogPosts.push({ title, body, author });
-    }
+    // Add new post with postId
+    blogPosts.push({ postId, title, body, author });
+
     console.log("Updated blogPosts array:", blogPosts);
     res.redirect("/");
 });
 
-app.post('/delete-blog', (req, res) => {
-    let { index } = req.body;
-    index = parseInt(index, 10); // Ensure index is an integer
+app.post("/submit-blog-edit", (req, res) => {
+    const { postId, title, body, author } = req.body;
 
-    if (!isNaN(index) && index >= 0 && index < blogPosts.length) {
-        blogPosts.splice(index, 1); // Remove the post at the correct index
+    // Find the index of the post to edit
+    const postIndex = blogPosts.findIndex(post => post.postId === postId);
+    if (postIndex !== -1) {
+        // Update the existing post with new data
+        blogPosts[postIndex] = { postId, title, body, author };
+        console.log("Updated blog post:", blogPosts[postIndex]);
     } else {
-        console.log("Invalid index for deletion:", index);
+        console.log("Invalid postId for editing:", postId);
+    }
+
+    res.redirect("/");
+});
+
+app.post('/delete-blog', (req, res) => {
+    const postId = req.body.postId;
+
+    // Find index of post to delete
+    const postIndex = blogPosts.findIndex(post => post.postId === postId);
+    if (postIndex !== -1) {
+        blogPosts.splice(postIndex, 1); // Remove the post at the correct index
+    } else {
+        console.log("Invalid postId for deletion:", postId);
     }
 
     res.redirect("/");
@@ -43,8 +56,6 @@ app.get("/", (req, res) => {
         myBlogs: blogPosts
     });
 });
-
-
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
