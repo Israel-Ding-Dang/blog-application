@@ -39,7 +39,7 @@
     <!--Hero Content-->
     <div class="card text-center content-center">
         <div class="card-body">
-          <h5 class="card-title">Welcome to the World of Words: <br>Ding&Dang Bloggers.</h5>
+          <h5 class="card-title">🤝Welcome to the World of Words: <br>Ding&Dang Bloggers.✍</h5>
           <p class="card-text">Your ultimate haven for crafting, sharing, and exploring captivating blog posts. Begin your blogging journey today, where every post is a new discovery!</p>
           <div>
             <a href="#" class="btn btn-primary btn-short" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create Blog Post</a>
@@ -80,7 +80,7 @@
   
     <% if (myBlogs.length > 0) {%>
         <div class="blog_middle_holder" id="target_section">
-            <h1 class="blog_middle">My Blog Posts</h1>                        
+            <h1 class="blog_middle">📝My Blog Posts</h1>                        
                 <% myBlogs.forEach(function(post, index) { %> 
                     <div class="blog_holder">
                         <h1 class="titles_for_blogs"><%= post.title %></h1>
@@ -103,20 +103,8 @@
         </div> 
     
      <% } else { %>
-    <div class="post_block"><h1 class="no_post">Your blog posts will be shown here.</h1></div>
+    <div class="post_block"><h1 class="no_post">Your blog posts will be shown here.📑</h1></div>
      <% } %> 
-  
- 
-
-
-
-  
-  
-
-
-    
-
-
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -155,6 +143,7 @@ document.querySelectorAll('.edit_button').forEach(button => {
 
         // Change form action to handle editing
         document.querySelector('.myForm').action = "/submit-blog-edit"; // Change the form action
+        
 
         // Assuming you have a Bootstrap modal, this will show it
         var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
