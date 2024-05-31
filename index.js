@@ -9,7 +9,6 @@ let blogPosts = [];
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
-
 app.post("/submit-blog", (req, res) => {
     const { title, body, author } = req.body;
     const postId = uuidv4(); // Generate unique postId
