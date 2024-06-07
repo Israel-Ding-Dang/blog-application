@@ -11,7 +11,8 @@ app.use(express.urlencoded({extended: true}));
 
 app.post("/submit-blog", (req, res) => {
     const { title, body, author } = req.body;
-    const postId = uuidv4(); // Generate unique postId
+    // Generate unique postId
+    const postId = uuidv4(); 
 
     // Add new post with postId
     blogPosts.push({ postId, title, body, author });
