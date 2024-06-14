@@ -23,7 +23,6 @@ app.post("/submit-blog", (req, res) => {
 
 app.post("/submit-blog-edit", (req, res) => {
     const { postId, title, body, author } = req.body;
-
     // Find the index of the post to edit
     const postIndex = blogPosts.findIndex(post => post.postId === postId);
     if (postIndex !== -1) {
@@ -39,7 +38,6 @@ app.post("/submit-blog-edit", (req, res) => {
 
 app.post('/delete-blog', (req, res) => {
     const postId = req.body.postId;
-
     // Find index of post to delete
     const postIndex = blogPosts.findIndex(post => post.postId === postId);
     if (postIndex !== -1) {
