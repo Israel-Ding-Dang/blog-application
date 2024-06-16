@@ -35,7 +35,6 @@
           </div>
         </div>
       </nav>
-
     <!--Hero Content-->
     <div class="card text-center content-center">
         <div class="card-body">
@@ -47,7 +46,6 @@
           </div>          
         </div>
     </div>
-
     <!--Modal to handle Blog Post Submissions-->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -56,8 +54,7 @@
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Create New Blog Post</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-         
+        <div class="modal-body">         
         <form action="/submit-blog" method="post" class="myForm">          
             <input type="hidden" name="postId" value="">
             <input id="blog-title" name="title" type="text" class="blog_title" placeholder="Enter the Title of your blog here" value="<%= typeof post !== 'undefined' ? post.title : '' %>">
@@ -65,8 +62,7 @@
             <input id="blog-author" type="text" name="author" placeholder="Enter Author's name">
             <input type="hidden" name="index" value="<%= typeof index !== 'undefined' ? index : '' %>">
             <div><input type="submit" value="Submit" class="btn btn-primary blog_submit_button"></div> 
-        </form>  
-                
+        </form>                 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
