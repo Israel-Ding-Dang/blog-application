@@ -72,6 +72,7 @@
   </div>
 
   <!--Displaying the blog posts created by the user-->  
+
     <% if (myBlogs.length > 0) {%>
         <div class="blog_middle_holder" id="target_section">
             <h1 class="blog_middle">📝My Blog Posts</h1>                        
@@ -136,8 +137,7 @@ document.querySelectorAll('.edit_button').forEach(button => {
         document.getElementById('blog-author').value = author;
 
         // Change form action to handle editing
-        document.querySelector('.myForm').action = "/submit-blog-edit"; // Change the form action
-        
+        document.querySelector('.myForm').action = "/submit-blog-edit"; // Change the form action        
 
         // Assuming you have a Bootstrap modal, this will show it
         var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
@@ -146,5 +146,6 @@ document.querySelectorAll('.edit_button').forEach(button => {
 });
 
   </script>
+  
 </body>
 </html>
