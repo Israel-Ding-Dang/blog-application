@@ -65,25 +65,31 @@
     padding-top: 20px;
     font-size: 5vw;
 }
+
 .blog_middle_holder {
     background-color: #0d6efd;
     height: auto;
 }
+
 .edit_button {
     margin-right: 10px;
     margin-top: 20px;
 }
+
 .blog_submit_button {
     margin-top: 20px;
 }
+
 .white {
     color: white;
 }
+
 .white-ish {
     color: whitesmoke;
     opacity: 50%;
     margin-bottom: 20px;
 }
+
 .delete-button {
     margin-top: 20px;
 }
