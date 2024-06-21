@@ -32,7 +32,6 @@ app.post("/submit-blog-edit", (req, res) => {
     } else {
         console.log("Invalid postId for editing:", postId);
     }
-
     res.redirect("/");
 });
 
