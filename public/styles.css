@@ -5,21 +5,26 @@
     align-items: center;
     justify-content: center;
 }
+
 .card-title {
     font-size: 5vw;
     color: #af3bcf;
 }
+
 .card-text {
     max-width: 600px;
     font-size: 1.5vw;
 }
+
 .myForm {
     display: flex;
     flex-direction: column;
 }
+
 .blog_title {
     margin-bottom: 20px;
 }
+
 .blog_body {
     margin-bottom: 20px;
 }
