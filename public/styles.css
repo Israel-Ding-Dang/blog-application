@@ -24,9 +24,11 @@
 .blog_title {
     margin-bottom: 20px;
 }
+
 .blog_body {
     margin-bottom: 20px;
 }
+
 .no_post {
     text-align: center;
     padding-top: 20px;
@@ -35,17 +37,21 @@
     padding-bottom: 20px;
     font-size: 5vw;
 }
+
 .titles_for_blogs {
     color: white;
     padding-bottom: 20px;
     font-size: 3vw;
 }
+
 .blogs_section{
     color: #0d6efd;
 }
+
 .post_block {
     border-radius: 40px;
 }
+
 .blog_holder {
     background-color: #0d6efd;
     margin-top: 25px;
