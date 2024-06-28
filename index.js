@@ -17,7 +17,6 @@ app.post("/submit-blog", (req, res) => {
     // Add new post with postId
     blogPosts.push({ postId, title, body, author });
 
-    console.log("Updated blogPosts array:", blogPosts);
     res.redirect("/");
 });
 
@@ -38,7 +37,7 @@ app.post("/submit-blog-edit", (req, res) => {
 
 app.post('/delete-blog', (req, res) => {
     const postId = req.body.postId;
-    
+
     // Find index of post to delete
     const postIndex = blogPosts.findIndex(post => post.postId === postId);
 
