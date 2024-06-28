@@ -23,6 +23,7 @@ app.post("/submit-blog", (req, res) => {
 
 app.post("/submit-blog-edit", (req, res) => {
     const { postId, title, body, author } = req.body;
+
     // Find the index of the post to edit
     const postIndex = blogPosts.findIndex(post => post.postId === postId);
     if (postIndex !== -1) {
@@ -44,7 +45,6 @@ app.post('/delete-blog', (req, res) => {
     } else {
         console.log("Invalid postId for deletion:", postId);
     }
-
     res.redirect("/");
 });
 
