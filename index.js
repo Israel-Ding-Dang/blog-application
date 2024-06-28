@@ -38,8 +38,10 @@ app.post("/submit-blog-edit", (req, res) => {
 
 app.post('/delete-blog', (req, res) => {
     const postId = req.body.postId;
+    
     // Find index of post to delete
     const postIndex = blogPosts.findIndex(post => post.postId === postId);
+
     if (postIndex !== -1) {
         blogPosts.splice(postIndex, 1); // Remove the post at the correct index
     } else {
