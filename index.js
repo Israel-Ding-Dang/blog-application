@@ -13,10 +13,8 @@ app.post("/submit-blog", (req, res) => {
     const { title, body, author } = req.body;
     // Generate unique postId
     const postId = uuidv4(); 
-
     // Add new post with postId
     blogPosts.push({ postId, title, body, author });
-
     res.redirect("/");
 });
 
@@ -37,7 +35,6 @@ app.post("/submit-blog-edit", (req, res) => {
 
 app.post('/delete-blog', (req, res) => {
     const postId = req.body.postId;
-
     // Find index of post to delete
     const postIndex = blogPosts.findIndex(post => post.postId === postId);
 
