@@ -4,16 +4,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.card-title {
+}.card-title {
     font-size: 5vw;
     color: #af3bcf;
-}
-.card-text {
+}.card-text {
     max-width: 600px;
     font-size: 1.5vw;
-}
-.myForm {
+}.myForm {
     display: flex;
     flex-direction: column;
 }
